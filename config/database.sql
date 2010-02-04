@@ -1,5 +1,5 @@
 -- 
--- Table `tl_cds`
+-- Table `tl_antique_books`
 -- 
 
 CREATE TABLE `tl_antique_books` (
@@ -8,7 +8,7 @@ CREATE TABLE `tl_antique_books` (
   -- kolumny charakterystyczne dla woluminu
   `zbior` varchar(64) NOT NULL default '',
   `nrInwent` smallint(5) unsigned NOT NULL default '0',
-  `zdjecie do numeru inwentazrowego`
+  `zdjecie do numeru inwentarzowego`
   `sygnatury` blob NULL,
   `oldSygnatury` varchar(255) NOT NULL default '',
   `height` varchar(64) NOT NULL default '',
