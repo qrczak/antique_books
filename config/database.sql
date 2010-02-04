@@ -8,7 +8,7 @@ CREATE TABLE `tl_antique_books` (
   -- kolumny charakterystyczne dla woluminu
   `zbior` varchar(64) NOT NULL default '',
   `nrInwent` smallint(5) unsigned NOT NULL default '0',
-   ???? zdjecie ????
+  `zdjecie do numeru inwentazrowego`
   `sygnatury` blob NULL,
   `oldSygnatury` varchar(255) NOT NULL default '',
   `height` varchar(64) NOT NULL default '',
@@ -51,26 +51,3 @@ CREATE TABLE `tl_antique_books` (
   `uwagi` mediumtext NULL,
   PRIMARY KEY  (`id`),
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-
-Kolumny charakterystyczne dla woluminu:
-zbiór – pole tekstowe
-nr inwentarzowy – pole liczbowe
-zdjêcie – hiper³¹cze do zdjêcia (nie musi to byæ osobne pole, zdjêcie mo¿e byæ przypisane do
-nr inwentarzowego) ????
-sygnatury
-dawne sygnatury – pole tekstowe
-wysokoœæ
-szerokoœæ
-ekslibris
-superekslibris
-inne znaki w³asnoœciowe
-druk/rêkopis/marginalia
-arkusze – materia³
-zdobienia krawêdzi
-obleczenie – materia³
-obleczenie – kolor
-ok³adziny
-zdobienia oprawy
-zapinki/wi¹zania/okucia
-charakterystyka zapinek/wi¹zañ
