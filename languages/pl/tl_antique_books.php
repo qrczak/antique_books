@@ -28,7 +28,7 @@
 $GLOBALS['TL_LANG']['tl_antique_books']['zbior']   = array('Zbiór', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['nrInwent']   = array('Numer inwentarzowy', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['image']   = array('Title', 'Please enter the CD title.');
-$GLOBALS['TL_LANG']['tl_antique_books']['sygnatury']   = array('Sygnatury', 'Please enter the CD title.');
+$GLOBALS['TL_LANG']['tl_antique_books']['sygnatury']   = array('Opisy sygnatur', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['sygAuthor']   = 'Autor';
 $GLOBALS['TL_LANG']['tl_antique_books']['sygTitle']   = 'Tytuł';
 $GLOBALS['TL_LANG']['tl_antique_books']['sygDatePub']   = 'Data publikacji';

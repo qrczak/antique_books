@@ -26,7 +26,7 @@
  * Front end module "Antique Books".
  * @copyright  Marcin Lachowski 2010
  * @author     Marcin Lachowski <marcin@typolight.pl>
- * @package    Controller
+ * @package    Controller 
  */
 class ModuleAntiqueBooks extends Module
 {

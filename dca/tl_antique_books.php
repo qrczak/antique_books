@@ -116,7 +116,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		),
 		// 'image' => array
 		// (
-			// 'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['image'],
+			// 'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['images'],
 			// 'inputType'               => 'fileTree',
 			// 'eval'                    => array('files'=>true, 'fieldType'=>'radio')
 		// ),
