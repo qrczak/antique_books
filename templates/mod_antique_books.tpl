@@ -13,3 +13,28 @@
 </table>
 
 </div>
+
+
+<?php
+	$value = $col['raw'];
+	$mtw = deserialize($value, TRUE);
+	$classes = array('even', 'odd');
+	$counter = 1;
+	foreach ($mtw as $mt)
+	{
+		if (is_array($mt))
+		{
+			echo $classes[$counter % 2];
+			echo $counter. ' - ';
+			echo $mt[0]. ' - ';
+			echo $mt[1]. ' - ';
+			echo $mt[2]. ' - ';
+			echo $mt[3]. ' - ';
+			echo $mt[4]. ' - ';
+			echo $mt[5]. ' - ';
+			echo $mt[6];
+			echo '<br />';
+			$counter++;
+		}
+	}
+?>

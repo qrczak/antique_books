@@ -26,7 +26,7 @@
  * Back end modules
  */
 $GLOBALS['TL_LANG']['MOD']['biblioLabel']   = 'Biblioteka';
-$GLOBALS['TL_LANG']['MOD']['antiqbook']   = array('Woluminy', 'Katalog woluminów odnawianych w pracowni konserwacji.');
+$GLOBALS['TL_LANG']['MOD']['antiqbook']   = array('Woluminy', 'Katalog woluminÃ³w odnawianych w pracowni konserwacji.');
 
 /**
  * Front end modules
