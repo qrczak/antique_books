@@ -24,7 +24,7 @@
 
 /**
  * -------------------------------------------------------------------------
- * BACK END MODULES
+ * BACK END MODULESS
  * -------------------------------------------------------------------------
  *
  * Insert the module into the back end modules array using array_insert().
