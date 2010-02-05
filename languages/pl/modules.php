@@ -14,9 +14,9 @@
  * English language file for back end and front end modules.
  *
  * PHP version 5
- * @copyright  Leo Feyer 2007
- * @author     Leo Feyer <leo@typolight.org>
- * @package    Language
+ * @copyright  Marcin Lachowski 2010
+ * @author     Marcin Lachowski <marcin@typolight.pl>
+ * @package    AntiqueBooks
  * @license    GPL
  * @filesource
  */
@@ -25,12 +25,12 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['cd_collection'] = array('CD collection', 'Publish your CD collection online.');
-
+$GLOBALS['TL_LANG']['MOD']['biblioLabel']   = 'Biblioteka';
+$GLOBALS['TL_LANG']['MOD']['antiqbook']   = array('Woluminy', 'Katalog woluminów odnawianych w pracowni konserwacji.');
 
 /**
  * Front end modules
  */
-$GLOBALS['TL_LANG']['FMD']['cd_collection'] = array('CD collection', 'This module lists all CDs of your collection.');
+//$GLOBALS['TL_LANG']['FMD']['cd_collection'] = array('CD collection', 'This module lists all CDs of your collection.');
 
 ?>

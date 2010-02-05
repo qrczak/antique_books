@@ -14,9 +14,9 @@
  * This is the data container array for table tl_cds.
  *
  * PHP version 5
- * @copyright  Leo Feyer 2007
- * @author     Leo Feyer <leo@typolight.org>
- * @package    CdCollection
+ * @copyright  Marcin Lachowski 2010
+ * @author     Marcin Lachowski <marcin@typolight.pl>
+ * @package    AntiqueBooks
  * @license    GPL
  * @filesource
  */
@@ -116,12 +116,13 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		),
 		// 'image' => array
 		// (
-			// 'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['images'],
+			// 'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['image'],
 			// 'inputType'               => 'fileTree',
 			// 'eval'                    => array('files'=>true, 'fieldType'=>'radio')
 		// ),
 		'sygnatury' => array
 		(
+		'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['sygnatury'],
 		'inputType' => 'multitextWizard',
 		'eval'      => array
 		  (
@@ -401,14 +402,14 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['dezynfek'],
 			'inputType'               => 'text',
 			'search'                  => true,
-			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50 sumnum')
+			'eval'                    => array('maxlength'=>64)
 		),
 		'napKonserw' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['napKonserw'],
 			'inputType'               => 'text',
 			'search'                  => true,
-			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50 sumnum')
+			'eval'                    => array('maxlength'=>64)
 		),
 		'uwagi' => array
 		(

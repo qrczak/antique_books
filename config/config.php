@@ -24,21 +24,26 @@
 
 /**
  * -------------------------------------------------------------------------
- * BACK END MODULESS
+ * BACK END MODULES
  * -------------------------------------------------------------------------
  *
  * Insert the module into the back end modules array using array_insert().
  */
 
 array_insert($GLOBALS['BE_MOD'], 1, array(
-'bibliolabel' => array
+'biblioLabel' => array
 (
-	'antiqbooklabel' => array
+	'antiqbook' => array
 		(
 			'tables' => array('tl_antique_books'),
-			'icon'   => 'system/modules/antique_books/html/book_open.png'
+			'icon'   => 'system/modules/antique_books/html/book_open.png',
 		)
 )));
+// $GLOBALS['BE_MOD']['content']['antiqbook'] = array
+// (
+    // 'tables'       => array('tl_antique_books'),
+    // 'icon'         => 'system/modules/antique_books/html/book_open.png'
+// );
 /**
  * -------------------------------------------------------------------------
  * FRONT END MODULES

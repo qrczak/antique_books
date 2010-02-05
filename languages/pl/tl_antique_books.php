@@ -85,12 +85,6 @@ $GLOBALS['TL_LANG']['tl_antique_books']['uwKonc_legend']   = 'Uwagi końcowe';
 $GLOBALS['TL_LANG']['tl_antique_books']['wolumin_legend']   = 'Wolumin';
 
 /**
- * Menu names in BE
- */
-$GLOBALS['TL_LANG']['tl_antique_books']['bibliolabel']   = 'Biblioteka';
-$GLOBALS['TL_LANG']['tl_antique_books']['antiqbooklabel']   = 'Woluminy';
-
-/**
  * Buttons
  */
 $GLOBALS['TL_LANG']['tl_antique_books']['new']    = array('Nowy wolumin', 'Dodaj nowy wolumin');
