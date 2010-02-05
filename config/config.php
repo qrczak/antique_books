@@ -14,9 +14,9 @@
  * This is the CD collection configuration file.
  *
  * PHP version 5
- * @copyright  Leo Feyer 2007
- * @author     Leo Feyer <leo@typolight.org>
- * @package    CdCollection
+ * @copyright  Marcin Lachowski 2010
+ * @author     Marcin Lachowski <marcin@typolight.pl>
+ * @package    AntiqueBooks
  * @license    GPL
  * @filesource
  */
@@ -28,24 +28,17 @@
  * -------------------------------------------------------------------------
  *
  * Insert the module into the back end modules array using array_insert().
-
-$GLOBALS['BE_MOD']['content']['antique_books'] = array
-(
-	'tables' => array('tl_antique_books'),
-	'icon'   => 'system/modules/antique_books/html/book_open.png'
-);
  */
 
-array_insert($GLOBALS['BE_MOD'], 0, array(
-            'biblio' => array
-						(
-							'tables' => array('tl_antique_books'),
-							'icon'   => 'system/modules/antique_books/html/book_open.png'
-						)
-					)
-			);
-
-
+array_insert($GLOBALS['BE_MOD'], 1, array(
+'bibliolabel' => array
+(
+	'antiqbooklabel' => array
+		(
+			'tables' => array('tl_antique_books'),
+			'icon'   => 'system/modules/antique_books/html/book_open.png'
+		)
+)));
 /**
  * -------------------------------------------------------------------------
  * FRONT END MODULES

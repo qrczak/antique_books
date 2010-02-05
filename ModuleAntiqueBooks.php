@@ -12,20 +12,20 @@
  * visit the project website http://www.typolight.org.
  *
  * PHP version 5
- * @copyright  Leo Feyer 2007
- * @author     Leo Feyer <leo@typolight.org>
- * @package    CdCollection
+ * @copyright  Marcin Lachowski 2010
+ * @author     Marcin Lachowski <marcin@typolight.pl>
+ * @package    AntiqueBooks
  * @license    GPL
  * @filesource
  */
 
 
 /**
- * Class ModuleCdCollection
+ * Class ModuleAntiqueBooks
  *
- * Front end module "CD collection".
- * @copyright  Leo Feyer 2007
- * @author     Leo Feyer <leo@typolight.org>
+ * Front end module "Antique Books".
+ * @copyright  Marcin Lachowski 2010
+ * @author     Marcin Lachowski <marcin@typolight.pl>
  * @package    Controller
  */
 class ModuleAntiqueBooks extends Module
@@ -57,7 +57,7 @@ class ModuleAntiqueBooks extends Module
 				'alt' => specialchars($objAntiqBook->title),
 				'image' => $objAntiqBook->nrInwent,
 				'sygnatury' => $objAntiqBook->sygnatury,
-				'oldSygnatury' => $objAntiqBook->nrInwent,
+				'oldSygnatury' => $objAntiqBook->oldSygnatury,
 				'height' => $objAntiqBook->nrInwent,
 				'width' => $objAntiqBook->nrInwent,
 				'eksl' => $objAntiqBook->nrInwent,

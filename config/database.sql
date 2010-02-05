@@ -5,27 +5,24 @@
 CREATE TABLE `tl_antique_books` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `tstamp` int(10) unsigned NOT NULL default '0',
-  -- kolumny charakterystyczne dla woluminu
   `zbior` varchar(64) NOT NULL default '',
   `nrInwent` smallint(5) unsigned NOT NULL default '0',
-  `zdjecie do numeru inwentarzowego`
   `sygnatury` blob NULL,
   `oldSygnatury` varchar(255) NOT NULL default '',
   `height` varchar(64) NOT NULL default '',
   `width` varchar(64) NOT NULL default '',
-  `eksl`
-  `supEksl`
-  `znakiWlas`
-  `drRekMarg`
-  `arkMat`
-  `zdobKraw`
-  `oblMat`
-  `oblKolor`
-  `okladziny`
-  `zdobOprawy`
-  `zapWiazOkucia`
-  `charZapWiaz`
-   -- stan zachowania
+  `eksl` varchar(64) NOT NULL default '',
+  `supEksl` varchar(64) NOT NULL default '',
+  `znakiWlas` varchar(64) NOT NULL default '',
+  `drRekMarg` varchar(64) NOT NULL default '',
+  `arkMat` varchar(64) NOT NULL default '',
+  `zdobKraw` varchar(64) NOT NULL default '',
+  `oblMat` varchar(64) NOT NULL default '',
+  `oblKolor` varchar(64) NOT NULL default '',
+  `okladziny` varchar(64) NOT NULL default '',
+  `zdobOprawy` varchar(64) NOT NULL default '',
+  `zapWiazOkucia` varchar(64) NOT NULL default '',
+  `charZapWiaz` varchar(64) NOT NULL default '',
   `cover` smallint(5) unsigned NOT NULL default '0',
   `grzbiet` smallint(5) unsigned NOT NULL default '0',
   `konstru` smallint(5) unsigned NOT NULL default '0',
@@ -45,7 +42,6 @@ CREATE TABLE `tl_antique_books` (
   `foxing` smallint(5) unsigned NOT NULL default '0',
   `owady` smallint(5) unsigned NOT NULL default '0',
   `sumaNum` smallint(5) unsigned NOT NULL default '0',
-   -- uwagi koncowe
   `dezynfek` varchar(64) NOT NULL default '',
   `napKonserw` varchar(64) NOT NULL default '',
   `uwagi` mediumtext NULL,
