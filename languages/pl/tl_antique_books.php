@@ -63,6 +63,7 @@ $GLOBALS['TL_LANG']['tl_antique_books']['zabOpr']   = array('Zabrudzenie oprawy'
 $GLOBALS['TL_LANG']['tl_antique_books']['blokKompl']   = array('Blok – kompletność', 'Jakie są zniszczenia');
 $GLOBALS['TL_LANG']['tl_antique_books']['defBloku']   = array('Deformacje bloku', 'Jakie są zniszczenia');
 $GLOBALS['TL_LANG']['tl_antique_books']['zMechBloku']   = array('Zniszczenia mechaniczne bloku', 'Jakie są zniszczenia');
+$GLOBALS['TL_LANG']['tl_antique_books']['zabBlokuWykl']   = array('Zabrudzenia bloku i wyklejek', 'Jakie są zniszczenia');
 $GLOBALS['TL_LANG']['tl_antique_books']['oslPapier']   = array('Osłabiony papier', 'Jakie są zniszczenia');
 $GLOBALS['TL_LANG']['tl_antique_books']['kruPapier']   = array('Kruchy papier', 'Jakie są zniszczenia');
 $GLOBALS['TL_LANG']['tl_antique_books']['zacZal']   = array('Zacieki/zalania', 'Jakie są zniszczenia');

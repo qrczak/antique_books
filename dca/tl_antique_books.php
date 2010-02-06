@@ -93,7 +93,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{zbiorLeg_legend},zbior,nrInwent;{imgInwent_legend},image;{sygOpis_legend},sygnatury;{wolumin_legend},oldSygnatury,height,width,eksl,supEksl,znakiWlas,drRekMarg,arkMat,zdobKraw,oblMat,oblKolor,okladziny,zdobOprawy,zapWiazOkucia,charZapWiaz;{stZachow_legend},cover,grzbiet,konstru,szycie,kapitalki,oblUbyt,oblZnisz,zapWiaz,zabOpr,blokKompl,defBloku,zMechBloku,oslPapier,kruPapier,zacZal,mikroOrg,foxing,owady,sumaNum;{uwKonc_legend},dezynfek,napKonserw,uwagi',
+		'default'                     => '{zbiorLeg_legend},zbior,nrInwent;{imgInwent_legend},image;{sygOpis_legend},sygnatury;{wolumin_legend},oldSygnatury,height,width,eksl,supEksl,znakiWlas,drRekMarg,arkMat,zdobKraw,oblMat,oblKolor,okladziny,zdobOprawy,zapWiazOkucia,charZapWiaz;{stZachow_legend},cover,grzbiet,konstru,szycie,kapitalki,oblUbyt,oblZnisz,zapWiaz,zabOpr,blokKompl,defBloku,zMechBloku,zabBlokuWykl,oslPapier,kruPapier,zacZal,mikroOrg,foxing,owady,sumaNum;{uwKonc_legend},dezynfek,napKonserw,uwagi',
 	),
 
 	// Fields
@@ -337,6 +337,14 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'zMechBloku' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zMechBloku'],
+			'default'                 => 0,
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'digit', 'tl_class'=>'w50')
+		),
+		'zabBlokuWykl' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zabBlokuWykl'],
 			'default'                 => 0,
 			'exclude'                 => true,
 			'inputType'               => 'text',

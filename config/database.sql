@@ -35,6 +35,7 @@ CREATE TABLE `tl_antique_books` (
   `blokKompl` smallint(5) unsigned NOT NULL default '0',
   `defBloku` smallint(5) unsigned NOT NULL default '0',
   `zMechBloku` smallint(5) unsigned NOT NULL default '0',
+  `zabBlokuWykl` smallint(5) unsigned NOT NULL default '0',
   `oslPapier` smallint(5) unsigned NOT NULL default '0',
   `kruPapier` smallint(5) unsigned NOT NULL default '0',
   `zacZal` smallint(5) unsigned NOT NULL default '0',
