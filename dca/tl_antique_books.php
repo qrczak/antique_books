@@ -119,7 +119,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			// 'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['image'],
 			// 'inputType'               => 'fileTree',
 			// 'eval'                    => array('files'=>true, 'fieldType'=>'radio')
-		// ),
+		// ), have to see how it works in other modules
 		'sygnatury' => array
 		(
 		'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['sygnatury'],
