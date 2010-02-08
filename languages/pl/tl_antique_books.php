@@ -74,6 +74,45 @@ $GLOBALS['TL_LANG']['tl_antique_books']['sumaNum']   = array('Suma zniszczeń', 
 $GLOBALS['TL_LANG']['tl_antique_books']['dezynfek']   = array('Dezynfekcja', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['napKonserw']   = array('Naprawy/konserwacje', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['uwagi']   = array('Uwagi', 'Uwagi końcowe.');
+$GLOBALS['TL_LANG']['tl_content']['paczkaDownl']   = array('Plik do pobrania', 'Pliki źródłowe zdjęć w pełnej rozdzielczości.');
+$GLOBALS['TL_LANG']['tl_content']['galUwagi']   = array('Plik do pobrania', 'Pliki źródłowe zdjęć w pełnej rozdzielczości.');
+$GLOBALS['TL_LANG']['tl_content']['galZach']   = array('Plik do pobrania', 'Pliki źródłowe zdjęć w pełnej rozdzielczości.');
+$GLOBALS['TL_LANG']['tl_content']['galIdent']   = array('Plik do pobrania', 'Pliki źródłowe zdjęć w pełnej rozdzielczości.');
+
+/**
+ * labele list rozwijanych w stanie zachowania
+ */
+
+$GLOBALS['TL_LANG']['tl_antique_books']['listdrRekMarg']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listArkMat']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblKolor']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOkladziny']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiazOkucia']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listCharZapWiaz']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listCover']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listGrzbiet']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKonstru']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listSzycie']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKapitalki']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblUbyt']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblZnisz']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiaz']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZabOpr']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listBlokKompl']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listDefBloku']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZMechBloku']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZabBlokuWykl']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOslPapier']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKruPapier']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZacZal']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listMikroOrg']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listFoxing']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOwady']['0']	= 'Biedronka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOwady']['1']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listNapKonserw']['0']	= 'Stonka';
 
 /**
  * Fields legends
