@@ -3,12 +3,12 @@
 /**
  * TYPOlight webCMS
  *
- * The TYPOlight webCMS is an accessible web content management system that 
- * specializes in accessibility and generates W3C-compliant HTML code. It 
- * provides a wide range of functionality to develop professional websites 
- * including a built-in search engine, form generator, file and user manager, 
- * CSS engine, multi-language support and many more. For more information and 
- * additional TYPOlight applications like the TYPOlight MVC Framework please 
+ * The TYPOlight webCMS is an accessible web content management system that
+ * specializes in accessibility and generates W3C-compliant HTML code. It
+ * provides a wide range of functionality to develop professional websites
+ * including a built-in search engine, form generator, file and user manager,
+ * CSS engine, multi-language support and many more. For more information and
+ * additional TYPOlight applications like the TYPOlight MVC Framework please
  * visit the project website http://www.typolight.org.
  *
  * Polish language file for table tl_antique_books.
@@ -41,7 +41,9 @@ $GLOBALS['TL_LANG']['tl_antique_books']['height']   = array('Wysokość', 'Pleas
 $GLOBALS['TL_LANG']['tl_antique_books']['width']   = array('Szerokość', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['eksl']   = array('Ekslibris', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['supEksl']   = array('Superekslibris', 'Please enter the CD title.');
+$GLOBALS['TL_LANG']['tl_antique_books']['pieczatki']   = array('Pieczątki', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['znakiWlas']   = array('Inne znaki własnościowe', 'Please enter the CD title.');
+$GLOBALS['TL_LANG']['tl_antique_books']['zewOznacz']   = array('Zewnętrzne oznaczenia', 'Wybierz zewnętrzne oznaczenia.');
 $GLOBALS['TL_LANG']['tl_antique_books']['drRekMarg']   = array('Druk/rękopis/marginalia', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['arkMat']   = array('Arkusze – materiał', 'Please enter the CD title.');
 $GLOBALS['TL_LANG']['tl_antique_books']['zdobKraw']   = array('Zdobienia krawędzi', 'Please enter the CD title.');
@@ -80,39 +82,115 @@ $GLOBALS['TL_LANG']['tl_content']['galZach']   = array('Plik do pobrania', 'Plik
 $GLOBALS['TL_LANG']['tl_content']['galIdent']   = array('Plik do pobrania', 'Pliki źródłowe zdjęć w pełnej rozdzielczości.');
 
 /**
- * labele list rozwijanych w stanie zachowania
+ * labele list rozwijanych
  */
-
-$GLOBALS['TL_LANG']['tl_antique_books']['listdrRekMarg']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listArkMat']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listOblKolor']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listOkladziny']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiazOkucia']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listCharZapWiaz']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listCover']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listGrzbiet']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listKonstru']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listSzycie']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listKapitalki']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listOblUbyt']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listOblZnisz']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiaz']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listZabOpr']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listBlokKompl']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listDefBloku']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listZMechBloku']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listZabBlokuWykl']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listOslPapier']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listKruPapier']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listZacZal']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listMikroOrg']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listFoxing']['0']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listOwady']['0']	= 'Biedronka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listOwady']['1']	= 'Stonka';
-$GLOBALS['TL_LANG']['tl_antique_books']['listNapKonserw']['0']	= 'Stonka';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZewOznacz']['B']	= 'Brak';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZewOznacz']['G']	= 'Tytuł lub autor na grzbiecie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZewOznacz']['R']	= 'Tytuł lub
+autor na krawędzi rowkowej';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZewOznacz']['N']	= 'Nalepka z tytułem';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZewOznacz']['I']	= 'Inicjał lub data wytłoczona na oprawie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listdrRekMarg']['D']	= 'Druk';
+$GLOBALS['TL_LANG']['tl_antique_books']['listdrRekMarg']['R']	= 'Rękopis';
+$GLOBALS['TL_LANG']['tl_antique_books']['listdrRekMarg']['M']	= 'Marginalia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listArkMat']['P']	= 'Papier';
+$GLOBALS['TL_LANG']['tl_antique_books']['listArkMat']['PG']	= 'Pergamin';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw']['B']	= 'Barwione krawędzie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw']['M']	= 'Marmoryzowane krawędzie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw']['C']	= 'Cyzelowanie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw']['Z']	= 'Złocenia krawędzi';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw']['BC']	= 'Barwione i cyzelowane krawędzie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw']['ZC']	= 'Złocone i cyzelowane krawędzie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['S']	= 'Skóra';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['PG']	= 'Pergamin';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['PŁ']	= 'Płótno';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['P']	= 'Papier';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['S+P']	= 'Półskórek';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['PG+P']	= 'Półpergamin';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['PŁ+P']	= 'Półpłótno';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['B']	= 'Brak (pierwotnie nie było)';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat']['NZ']	= 'Nie zachowane';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOkladziny']['DS']	= 'Deski';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOkladziny']['TK']	= 'Tektura';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOkladziny']['B']	= 'Brak (oprawa miękka)';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOkladziny']['NZ']	= 'Nie zachowane';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy']['B']	= 'Brak';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy']['T']	= 'Tłoczenia ślepe';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy']['TZ']	= 'Tłoczenia złocone';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy']['TB']	= 'Tłoczenia barwione';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy']['R']	= 'Karta rękopisu użyta jako obleczenie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy']['M']	= 'Marmurek';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiazOkucia']['Z']	= 'Zapinki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiazOkucia']['W']	= 'Wiązania';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiazOkucia']['O']	= 'Okucia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiazOkucia']['Ł']	= 'Łańcuch';
+$GLOBALS['TL_LANG']['tl_antique_books']['listCover']['0']	= 'Pierwotnie nie było';
+$GLOBALS['TL_LANG']['tl_antique_books']['listCover']['1']	= 'Stan dobry, niewielkie zniszczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listCover']['2']	= 'Średnie zniszczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listCover']['3']	= 'Znaczne deformacje lub ubytki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listGrzbiet']['1']	= 'Niewielkie zniszczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listGrzbiet']['2']	= 'Średnie zniszczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listGrzbiet']['3']	= 'Znaczne deformacje, pęknięcia lub ubytki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKonstru']['0']	= 'Stan dobry';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKonstru']['1']	= 'Pęknięcie wyklejek między blokiem a oprawą lub poluzowanie oprawy';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKonstru']['2']	= 'Okładka częściowo oddzielona od bloku';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKonstru']['3']	= 'Cała okładka lub okładzina odłączona od bloku';
+$GLOBALS['TL_LANG']['tl_antique_books']['listSzycie']['0']	= 'Stan dobry';
+$GLOBALS['TL_LANG']['tl_antique_books']['listSzycie']['1']	= 'Szycie poluzowane';
+$GLOBALS['TL_LANG']['tl_antique_books']['listSzycie']['2']	= 'Wysunięcie pojedynczych kart lub składek';
+$GLOBALS['TL_LANG']['tl_antique_books']['listSzycie']['3']	= 'Szycie nie spełnia swojej funkcji';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKapitalki']['0']	= 'Pierwotnie nie było kapitałek';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKapitalki']['1']	= 'Zabrudzenie  i drobne uszkodzenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKapitalki']['2']	= 'Uszkodzenia kapitałek';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKapitalki']['3']	= 'Brak co najmniej jednej kapitałki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblUbyt']['0']	= 'pierwotnie nie było obleczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblUbyt']['1']	= 'brak lub niewielkie ubytki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblUbyt']['2']	= 'średnie ubytki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblUbyt']['3']	= 'duże ubytki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblZnisz']['0']	= 'Pierwotnie nie było obleczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblZnisz']['1']	= 'Niewielkie zniszczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblZnisz']['2']	= 'Średnie zniszczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOblZnisz']['3']	= 'Duże zniszczenia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiaz']['0']	= 'Pierwotnie nie było';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiaz']['1']	= 'Elementy kompletne';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiaz']['2']	= 'Brak zapinki/wiązania/okucia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiaz']['3']	= 'Pozostałości lub ślady zapinek/wiązań/okuć';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZabOpr']['1']	= 'Niewielkie zabrudzenia/ zaplamienia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZabOpr']['2']	= 'Średnie zabrudzenia/ zaplamienia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZabOpr']['3']	= 'Znaczne zabrudzenia/ zaplamienia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listBlokKompl']['1']	= 'Blok kompletny';
+$GLOBALS['TL_LANG']['tl_antique_books']['listBlokKompl']['2']	= 'Brak pojedynczych kart';
+$GLOBALS['TL_LANG']['tl_antique_books']['listBlokKompl']['3']	= 'Brak znacznej części kart';
+$GLOBALS['TL_LANG']['tl_antique_books']['listDefBloku']['1']	= 'Blok w dobrym stanie  - niezdeformowany lub lekko zdeformowany';
+$GLOBALS['TL_LANG']['tl_antique_books']['listDefBloku']['2']	= 'Blok zdeformowany';
+$GLOBALS['TL_LANG']['tl_antique_books']['listDefBloku']['3']	= 'Blok mocno zdeformowany';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZMechBloku']['1']	= 'Niewielkie deformacje, ubytki lub przedarcia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZMechBloku']['2']	= 'Średnie deformacje, ubytki lub przedarcia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZMechBloku']['3']	= 'Znaczne deformacje, ubytki lub przedarcia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZabBlokuWykl']['1']	= 'Niewielkie zabrudzenia/ zaplamienia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZabBlokuWykl']['2']	= 'Średnie zabrudzenia/ zaplamienia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZabBlokuWykl']['3']	= 'Znaczne zabrudzenia/ zaplamienia';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOslPapier']['0']	= 'Papier w dobrym stanie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOslPapier']['1']	= 'Papier osłabiony';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKruPapier']['0']	= 'Papier w dobrym stanie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listKruPapier']['1']	= 'Papier kruchy';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZacZal']['0']	= 'Stan dobry – brak zacieków';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZacZal']['1']	= 'Niewielkie zacieki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZacZal']['2']	= 'Średnie zacieki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listZacZal']['3']	= 'Znaczne zacieki';
+$GLOBALS['TL_LANG']['tl_antique_books']['listMikroOrg']['0']	= 'Brak śladów ataku mikrobiologicznego';
+$GLOBALS['TL_LANG']['tl_antique_books']['listMikroOrg']['1']	= 'Niewielki stopień zainfekowania mikroorganizmami';
+$GLOBALS['TL_LANG']['tl_antique_books']['listMikroOrg']['2']	= 'Zainfekowane jest nie więcej niż połowa bloku';
+$GLOBALS['TL_LANG']['tl_antique_books']['listMikroOrg']['3']	= 'Zainfekowana jest co najmniej połowa bloku';
+$GLOBALS['TL_LANG']['tl_antique_books']['listFoxing']['0']	= 'Brak śladów foxingu';
+$GLOBALS['TL_LANG']['tl_antique_books']['listFoxing']['1']	= 'Widoczny foxing';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOwady']['0']	= 'Brak śladów żerowania owadów';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOwady']['1']	= 'Niewielkie ubytki spowodowane przez owady';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOwady']['2']	= 'Średnie zniszczenia spowodowane przez owady';
+$GLOBALS['TL_LANG']['tl_antique_books']['listOwady']['3']	= 'Duże zniszczenia spowodowane przez owady';
+$GLOBALS['TL_LANG']['tl_antique_books']['listNapKonserw']['N']	= 'Naprawy';
+$GLOBALS['TL_LANG']['tl_antique_books']['listNapKonserw']['NK']	= 'Naprawy konserwatorkie';
+$GLOBALS['TL_LANG']['tl_antique_books']['listNapKonserw']['K']	= 'Konserwacja';
 
 /**
  * Fields legends

@@ -20,7 +20,18 @@
  * @license    GPL
  * @filesource
  */
-
+class tl_antique_books
+{
+	public function countofsygnatury()
+	{
+		$a=array('sygnatury');
+		$arrImageSize = false;
+		if ($res) {
+			$arrImageSize = array($res[0], $res[1], 13);
+		}
+		return $arrImageSize;
+	}
+}
 
 /**
  * Table tl_antique_books
@@ -41,13 +52,13 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'sorting' => array
 		(
 			'mode'                    => 1,
-			'fields'                  => array('zbior'),
+			'fields'                  => array('nrInwent'),
 			'flag'                    => 1,
-			'panelLayout'             => 'search,limit'
+			'panelLayout'             => 'filter;search,limit'
 		),
 		'label' => array
 		(
-			'fields'                  => array('zbior', 'nrInwent'),
+			'fields'                  => array('zbior', 'sygnatury'),
 			'format'                  => '%s <span style="color:#b3b3b3; padding-left:3px;">[%s]</span>'
 		),
 		'global_operations' => array
@@ -93,7 +104,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{zbiorLeg_legend},zbior,nrInwent;{imgInwent_legend},image;{sygOpis_legend},sygnatury;{wolumin_legend},oldSygnatury,height,width,eksl,supEksl,znakiWlas,drRekMarg,arkMat,zdobKraw,oblMat,oblKolor,okladziny,zdobOprawy,zapWiazOkucia,charZapWiaz,galIdent;{stZachow_legend},cover,grzbiet,konstru,szycie,kapitalki,oblUbyt,oblZnisz,zapWiaz,zabOpr,blokKompl,defBloku,zMechBloku,zabBlokuWykl,oslPapier,kruPapier,zacZal,mikroOrg,foxing,owady,sumaNum,galZach;{uwKonc_legend},dezynfek,napKonserw,uwagi,galUwagi,paczkaDownl',
+		'default'                     => '{zbiorLeg_legend},zbior,nrInwent;{imgInwent_legend},image;{sygOpis_legend},sygnatury;{wolumin_legend},oldSygnatury,height,width,eksl,supEksl,pieczatki,znakiWlas,zewOznacz,drRekMarg,arkMat,zdobKraw,oblMat,oblKolor,okladziny,zdobOprawy,zapWiazOkucia,charZapWiaz,galIdent;{stZachow_legend},cover,grzbiet,konstru,szycie,kapitalki,oblUbyt,oblZnisz,zapWiaz,zabOpr,blokKompl,defBloku,zMechBloku,zabBlokuWykl,oslPapier,kruPapier,zacZal,mikroOrg,foxing,owady,sumaNum,galZach;{uwKonc_legend},dezynfek,napKonserw,uwagi,galUwagi,paczkaDownl',
 	),
 
 	// Fields
@@ -104,7 +115,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zbior'],
 			'inputType'               => 'text',
 			'search'                  => true,
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>64)
+			'eval'                    => array('mandatory'=>true, 'maxlength'=>64, 'tl_class'=>'w50')
 		),
 		'nrInwent' => array
 		(
@@ -177,102 +188,114 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
-		'znakiWlas' => array
+		'pieczatki' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['znakiWlas'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['pieczatki'],
 			'inputType'               => 'text',
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
+		'znakiWlas' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['znakiWlas'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'textarea',
+			'eval'                    => array('style'=>'height:60px;', 'allowHtml'=>true, 'tl_class'=>'clr')
+		),
+		'zewOznacz' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zewOznacz'],
+			'exclude'                 => true,
+			'filter'                  => true,
+			'inputType'               => 'select',
+			'options'                 => array('B', 'G', 'R', 'N', 'I'),
+			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZewOznacz'],
+			'eval'                    => array('tl_class'=>'w50')
+		),
 		'drRekMarg' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['drRekMarg'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('D', 'R', 'M'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listdrRekMarg'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'arkMat' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['arkMat'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('P', 'PG'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listArkMat'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'zdobKraw' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zdobKraw'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('B', 'M', 'C', 'Z', 'BC', 'ZC'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZdobKraw'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'oblMat' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['oblMat'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('S', 'PG', 'PŁ', 'P', 'S+P', 'PG+P', 'PŁ+P', 'B', 'NZ'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listOblMat'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'oblKolor' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['oblKolor'],
-			'default'                 => 0,
-			'exclude'                 => true,
-			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
-			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listOblKolor'],
-			'eval'                    => array('tl_class'=>'w50')
+			'inputType'               => 'text',
+			'search'                  => true,
+			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
 		'okladziny' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['okladziny'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('DS', 'TK', 'B', 'NZ'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listOkladziny'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'zdobOprawy' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zdobOprawy'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('B', 'T', 'TZ', 'TB', 'R', 'M'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZdobOprawy'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'zapWiazOkucia' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zapWiazOkucia'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('Z', 'W', 'O', 'Ł'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiazOkucia'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'charZapWiaz' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['charZapWiaz'],
-			'default'                 => 0,
-			'exclude'                 => true,
-			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
-			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listCharZapWiaz'],
-			'eval'                    => array('tl_class'=>'w50')
+			'inputType'               => 'text',
+			'search'                  => true,
+			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
 		'galIdent' => array
 		(
@@ -284,138 +307,138 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'cover' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['cover'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listCover'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'grzbiet' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['grzbiet'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listGrzbiet'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'konstru' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['konstru'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listKonstru'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'szycie' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['szycie'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listSzycie'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'kapitalki' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['kapitalki'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listKapitalki'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'oblUbyt' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['oblUbyt'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listOblUbyt'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'oblZnisz' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['oblZnisz'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listOblZnisz'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'zapWiaz' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zapWiaz'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiaz'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'zabOpr' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zabOpr'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZabOpr'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'blokKompl' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['blokKompl'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listBlokKompl'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'defBloku' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['defBloku'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listDefBloku'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'zMechBloku' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zMechBloku'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZMechBloku'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'zabBlokuWykl' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zabBlokuWykl'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZabBlokuWykl'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'oslPapier' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['oslPapier'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
 			'options'                 => array('0', '1'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listOslPapier'],
@@ -424,8 +447,8 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'kruPapier' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['kruPapier'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
 			'options'                 => array('0', '1'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listKruPapier'],
@@ -434,28 +457,28 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'zacZal' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zacZal'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZacZal'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'mikroOrg' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['mikroOrg'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listMikroOrg'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'foxing' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['foxing'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
 			'options'                 => array('0', '1'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listFoxing'],
@@ -464,17 +487,16 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'owady' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['owady'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listOwady'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
 		'sumaNum' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['sumaNum'],
-			'default'                 => 0,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'digit', 'disabled'=>true, 'tl_class'=>'w50 sumnum')
 		),
@@ -495,10 +517,10 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'napKonserw' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['napKonserw'],
-			'default'                 => 0,
 			'exclude'                 => true,
+			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('0', '1'),
+			'options'                 => array('N', 'NK', 'K'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listNapKonserw'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
