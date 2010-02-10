@@ -114,15 +114,15 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['zbior'],
 			'inputType'               => 'text',
 			'search'                  => true,
+			'exclude'                 => true,
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>64, 'tl_class'=>'w50')
 		),
 		'nrInwent' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['nrInwent'],
-			'default'                 => 3,
 			'exclude'                 => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'rgxp'=>'digit', 'tl_class'=>'w50')
+			'eval'                    => array('mandatory'=>true, 'tl_class'=>'w50')
 		),
 		// 'image' => array
 		// (
@@ -133,8 +133,9 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'sygnatury' => array
 		(
 		'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['sygnatury'],
-		'inputType' => 'multitextWizard',
-		'eval'      => array
+		'inputType' 			  => 'multitextWizard',
+		'exclude'                 => true,
+		'eval'      			  => array
 		  (
 			'mandatory' => false, 
 			'doNotSaveEmpty'=>true, 
@@ -156,6 +157,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['oldSygnatury'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
@@ -163,20 +165,23 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['height'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
-			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
+			'eval'                    => array('rgxp'=>'digit', 'tl_class'=>'w50')
 		),
 		'width' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['width'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
-			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
+			'eval'                    => array('rgxp'=>'digit', 'tl_class'=>'w50')
 		),
 		'eksl' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['eksl'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
@@ -184,6 +189,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['supEksl'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
@@ -191,6 +197,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['pieczatki'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
@@ -256,6 +263,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['oblKolor'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
@@ -293,6 +301,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['charZapWiaz'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
@@ -497,6 +506,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['sumaNum'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'eval'                    => array('rgxp'=>'digit', 'tl_class'=>'w50 sumnum')
 		),
 		'galZach' => array
@@ -510,6 +520,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['dezynfek'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'search'                  => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		),
@@ -529,7 +540,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'textarea',
-			'eval'                    => array('rte'=>'tinyMCE'),
+			'eval'                    => array('rte'=>'tinyMCE', 'tl_class'=>'clr uwagtxt'),
 			'explanation'             => 'insertTags'
 		),
 		'galUwagi' => array
@@ -543,6 +554,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['paczkaDownl'],
 			'inputType'               => 'text',
+			'exclude'                 => true,
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		)
 	)

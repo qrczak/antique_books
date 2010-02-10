@@ -4,6 +4,9 @@ input#ctrl_sumaNum {
 	font-weight:bold;
 	cursor: pointer;
 }
-#pal_stZachow_legend .galuwag {
+#pal_stZachow_legend .galuwag, #pal_uwKonc_legend .uwagtxt {
 	margin-top:10px;
+}
+table#ctrl_sygnatury tr td, table#ctrl_sygnatury tr th {
+	padding-bottom:5px;
 }
