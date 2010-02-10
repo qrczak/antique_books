@@ -48,7 +48,7 @@ CREATE TABLE `tl_antique_books` (
   `dezynfek` varchar(64) NOT NULL default '',
   `napKonserw` varchar(64) NOT NULL default '',
   `uwagi` mediumtext NULL,
-  `paczkaDownl` varchar(255) NOT NULL default '',
+  `paczkaDownl` varchar(64) NOT NULL default '',
   `galIdent` blob NULL,
   `galZach` blob NULL,
   `galUwagi` blob NULL,

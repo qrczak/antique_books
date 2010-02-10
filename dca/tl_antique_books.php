@@ -20,17 +20,14 @@
  * @license    GPL
  * @filesource
  */
-class tl_antique_books
+class tl_antique_books extends Backend
 {
-	public function countofsygnatury()
+	public function countSygnatury($row)
 	{
-		$a=array('sygnatury');
-		$arrImageSize = false;
-		if ($res) {
-			$arrImageSize = array($res[0], $res[1], 13);
-		}
-		return $arrImageSize;
-	}
+    $countSygnatury = count(unserialize($row['sygnatury']));
+	$dataWpisania = date("d.m.Y", $row['tstamp']);
+    return sprintf('Zbiór: <strong>%s</strong><br />Numer inwentarzowy: <strong>%s</strong><br />Sygnatur: <strong>%s</strong><br />Suma zniszczeń: <strong>%s</strong><br />Data wprowadzenia/aktualizacji: <strong>%s</strong>', $row['zbior'], $row['nrInwent'], $countSygnatury, $row['sumaNum'], $dataWpisania);
+  }
 }
 
 /**
@@ -52,14 +49,16 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'sorting' => array
 		(
 			'mode'                    => 1,
-			'fields'                  => array('nrInwent'),
-			'flag'                    => 1,
+			'fields'                  => array('id'),
+			'flag'                    => 12,
 			'panelLayout'             => 'filter;search,limit'
 		),
 		'label' => array
 		(
 			'fields'                  => array('zbior', 'sygnatury'),
-			'format'                  => '%s <span style="color:#b3b3b3; padding-left:3px;">[%s]</span>'
+			'format'                  => '%s <span style="color:#b3b3b3; padding-left:3px;">[%s]</span>',
+			'label_callback'          => array('tl_antique_books', 'countSygnatury')
+
 		),
 		'global_operations' => array
 		(
@@ -219,7 +218,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('D', 'R', 'M'),
+			'options'                 => array('D', 'R', 'M', 'D+R', 'D+R+M', 'D+M'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listdrRekMarg'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
@@ -286,7 +285,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('Z', 'W', 'O', 'Ł'),
+			'options'                 => array('Z', 'W', 'O', 'Ł', 'Z+O', 'Z+O+Ł', 'Z+Ł'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listZapWiazOkucia'],
 			'eval'                    => array('tl_class'=>'w50')
 		),
@@ -312,7 +311,7 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 			'inputType'               => 'select',
 			'options'                 => array('0', '1', '2', '3'),
 			'reference'				  => &$GLOBALS['TL_LANG']['tl_antique_books']['listCover'],
-			'eval'                    => array('tl_class'=>'w50')
+			'eval'                    => array('tl_class'=>'w50 covlicz')
 		),
 		'grzbiet' => array
 		(
@@ -498,14 +497,14 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_antique_books']['sumaNum'],
 			'inputType'               => 'text',
-			'eval'                    => array('rgxp'=>'digit', 'disabled'=>true, 'tl_class'=>'w50 sumnum')
+			'eval'                    => array('rgxp'=>'digit', 'tl_class'=>'w50 sumnum')
 		),
 		'galZach' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['galZach'],
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
-			'eval'                    => array('fieldType'=>'checkbox', 'files'=>true, 'extensions'=>'jpg,jpeg,gif,png')
+			'eval'                    => array('fieldType'=>'checkbox', 'files'=>true, 'extensions'=>'jpg,jpeg,gif,png', 'tl_class'=>'galuwag clr')
 		),
 		'dezynfek' => array
 		(
@@ -543,9 +542,8 @@ $GLOBALS['TL_DCA']['tl_antique_books'] = array
 		'paczkaDownl' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['paczkaDownl'],
-			'exclude'                 => true,
-			'inputType'               => 'fileTree',
-			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'extensions'=>'zip,rar', 'tl_class'=>'clr')
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
 		)
 	)
 );

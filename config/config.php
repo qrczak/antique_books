@@ -37,6 +37,8 @@ array_insert($GLOBALS['BE_MOD'], 1, array(
 		(
 			'tables' => array('tl_antique_books'),
 			'icon'   => 'system/modules/antique_books/html/book_open.png',
+			'stylesheet'   => 'system/modules/antique_books/html/antique_books.css',
+			'javascript'   => 'system/modules/antique_books/html/moo_count.js'
 		)
 )));
 // $GLOBALS['BE_MOD']['content']['antiqbook'] = array
